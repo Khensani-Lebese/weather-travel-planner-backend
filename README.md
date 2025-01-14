@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 Weather-Based Travel Planner Backend
 
 Overview
@@ -199,3 +200,11 @@ Create a new branch.
 Make your changes.
 Commit and push your changes.
 Open a pull request.
+=======
+# React + Vite
+
+# API
+
+1. Weather Api
+2. Mapbox
+>>>>>>> dde644d3c623a73adbdacfaecc36344318ac4993
