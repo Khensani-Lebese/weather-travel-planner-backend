@@ -1,6 +1,8 @@
-<<<<<<< HEAD
-Weather-Based Travel Planner Backend
+Weather-Based Travel Planner
 
+Frontend
+
+Backend
 Overview
 
 This backend provides user authentication (register/login) and allows users to save their favorite destinations. It connects to MongoDB for data persistence and uses JWT for secure authentication.
@@ -200,11 +202,3 @@ Create a new branch.
 Make your changes.
 Commit and push your changes.
 Open a pull request.
-=======
-# React + Vite
-
-# API
-
-1. Weather Api
-2. Mapbox
->>>>>>> dde644d3c623a73adbdacfaecc36344318ac4993
