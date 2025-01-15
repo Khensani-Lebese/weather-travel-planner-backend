@@ -10,7 +10,9 @@ const generateToken = (id) => {
 };
 
 // @route POST /api/auth/register
-
+router.get("/test", async (req, res) => {
+  res.json({ message: "Success" });
+});
 router.post("/register", async (req, res) => {
   const { name, email, password } = req.body;
 
