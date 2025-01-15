@@ -26,6 +26,3 @@ dist-ssr
 
 .env
 
-.env
-
-node_modules.env
