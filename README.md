@@ -1,4 +1,11 @@
 Weather-Based Travel Planner
+Screenshots:
+
+![Landing Page Screenshot](images/TravelTidesLandingPage.PNG "Landing Page View")
+
+![Activities Screenshot](images/TravelTidesActivities.PNG "Activities View")
+
+![Location Screenshot](images/TravelTidesLocation.PNG "Saved Locations View")
 
 Frontend
 

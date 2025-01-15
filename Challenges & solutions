@@ -1,3 +1,5 @@
+BACKEND
+
 1. Handling Errors and Debugging
 
 Challenge:
@@ -41,3 +43,208 @@ Used the MVC (Model-View-Controller) pattern:
 Models defined schemas and handled database interaction.
 Routes mapped endpoints to appropriate controller logic.
 Middleware was used for authentication and error handling.
+
+FRONTEND
+
+Pictures used and credits:
+
+Photo by Athena Sandrini: https://www.pexels.com/photo/photo-of-sailing-boat-1586795/ Image by gstudioimagen on Freepik Photo by Asad Photo Maldives: https://www.pexels.com/photo/landscape-photography-of-trees-on-shoreline-457882/ Photo by Pixabay: https://www.pexels.com/photo/loungers-under-parasol-at-shoreline-531035/ Photo by Jess Loiterton: https://www.pexels.com/photo/body-of-water-during-sunset-4321080/
+
+component breakdown:
+
+Landing Page Component
+
+The Landing Page serves as the entry point of the application, providing navigation options for users to register or log in, along with an introduction to the application's purpose.
+
+Features
+
+Navigation Bar:
+
+Displays the application logo with an icon (TiLocation) and the app name ("TravelTides").
+Includes buttons to navigate to the Login (/login) and Register (/register) pages.
+
+Main Content:
+
+A title ("Weather proof your travels") and a subtitle ("Trusted by many.") to convey the app's purpose.
+A prominent call-to-action button that redirects users to the Register page (/register).
+
+Component Details
+
+Dependencies:
+
+React Router DOM:
+Link: For navigation to Login and Register pages.
+React Icons:
+TiLocation: Icon representing the app's theme (location/weather/travel).
+
+Styling:
+
+Classes like logo-land, login-register, landing-content, and landing-page-container are used for styling purposes. Ensure these are defined in the corresponding CSS/SCSS file.
+
+Routing:
+
+Make sure the /login and /register routes are properly set up in your App.js or Routes.js file for navigation to work.
+
+Home Component
+
+The Home component is the central page of the application, serving as the main interface for weather forecasting and location management. It integrates multiple functionalities such as theme switching, saving favorite locations, viewing weather details, and suggesting activities based on weather data.
+
+Features
+
+Theme Switching: Toggle between light and dark modes.
+Weather Data: Fetch and display weather details for the current or selected location.
+Saved Locations:
+Save favorite locations for quick access.
+Delete saved locations as needed.
+Location Suggestions: Suggest activities based on current weather conditions.
+Location Detection: Automatically detect the user's location using geolocation.
+API Integration:
+Fetch weather data from the Weather API.
+Fetch and manage favorite locations from the backend server.
+
+Reusable Components:
+Integrates the Sidebar component for navigation and saved locations.
+Integrates the Main component for displaying weather details and other content.
+Props Passed to Components
+
+Sidebar
+theme (string): Current theme, either light or dark.
+
+savedLocations (array): List of saved locations.
+
+changeLocation (function): Callback to change the current location.
+
+handleDeleteSavedLocation (function): Callback to delete a saved location.
+
+handleOpenModal (function): Callback to open the modal.
+handleOpenProfileModal (function): Callback to open the profile modal.
+
+Main
+locationObj (object): Current weather data object.
+changeLocation (function): Callback to update the current location.
+
+changeTheme (function): Callback to toggle between themes.
+
+theme (string): Current theme, either light or dark.
+
+handleSaveLocation (function): Callback to save a location.
+
+lat (number): Latitude of the current location.
+
+lon (number): Longitude of the current location.
+
+weeklyForecast (array): Array of weekly forecast data.
+
+suggest (function): Callback to suggest activities.
+
+toggleActivities (boolean): State for toggling activity suggestions.
+
+openModal (boolean): State to indicate if the modal is open.
+
+openProfileModal (boolean): State to indicate if the profile modal is open.
+
+closeModal (function): Callback to close the modal.
+
+closeProfileModal (function): Callback to close the profile modal.
+
+savedLocations (array): List of saved locations.
+
+handleDeleteSavedLocation (function): Callback to delete a saved location.
+
+State Management
+The Home component uses useState and a custom useLocalStorage hook to manage the following
+
+states:
+
+Location Data:
+
+locationName: The name of the current location.
+
+locationObj: An object containing weather data for the current location.
+
+lon and lat: Longitude and latitude of the current location.
+
+weeklyForecast: Weekly forecast data for the current location.
+
+User Preferences:
+
+theme: The current theme (light or dark).
+toggleActivities: A boolean for toggling activity suggestions.
+
+openModal and openProfileModal: Booleans for controlling modal visibility.
+
+Favorites:
+
+savedLocations: An array of saved favorite locations.
+
+Loading State:
+
+loading: Boolean to indicate if data is being loaded.
+API Endpoints
+
+Weather API:
+
+Base URL: process.env.API_URL
+
+Key: process.env.API_KEY
+
+Endpoint: /v1/forecast.json
+
+Favorites API:
+
+Base URL: process.env.PROD_URL
+
+Endpoints:
+GET /api/favorites: Fetch saved locations.
+POST /api/favorites: Save a new location.
+DELETE /api/favorites/:id: Delete a saved location.
+
+Functions
+
+Core Functions
+
+changeLocation(name): Updates the current location name.
+
+changeTheme(): Toggles between light and dark themes.
+
+handleSaveLocation(): Saves the current location to the favorites list.
+
+handleDeleteSavedLocation(id): Deletes a location from the favorites list.
+
+suggest(): Toggles activity suggestions.
+Utility Functions
+
+getFavourites(): Fetches the user's favorite locations from the backend.
+
+success(position): Callback for successful geolocation.
+
+error(error): Callback for geolocation error handling.
+
+Setup Instructions
+
+Clone the repository and navigate to the project directory.
+
+Create a .env file with the following variables:
+
+env
+
+API_URL=<Your Weather API Base URL>
+API_KEY=<Your Weather API Key>
+PROD_URL=<Your Backend Base URL>
+
+Start the application:
+
+npm install
+
+npm start
+
+Dependencies
+
+React: For building the UI.
+useLocalStorage Hook: For persisting state in local storage.
+Geolocation API: For detecting the user's current location.
+
+Notes
+Ensure the API keys and environment variables are correctly set up.
+The application handles basic error scenarios; further enhancements could include better error handling and user notifications.
+Make sure the backend server is running to use the favorites functionality.
