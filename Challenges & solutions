@@ -1,0 +1,43 @@
+1. Handling Errors and Debugging
+
+Challenge:
+Dealing with errors like “refusing to merge unrelated histories” or MongoDB connection issues.
+Ensuring proper error handling in the backend to avoid crashes.
+
+Solution:
+Implemented try-catch blocks in routes to handle asynchronous errors gracefully.
+Used console.error() for debugging and fixed Git-related issues by using commands like --allow-unrelated-histories and resolving merge conflicts manually.
+Rechecked .env file configurations and restarted the server when needed.
+
+2.Git Workflow Challenges
+
+Challenge:
+Managing Git branches and pushing changes to the remote repository without overriding existing code.
+Handling merge conflicts and unrelated Git histories.
+
+Solution:
+Followed a systematic Git workflow:
+git pull origin <branch> to sync with the latest changes.
+Staged and committed changes locally (git add, git commit).
+Pushed changes with git push origin <branch>.
+Resolved merge conflicts manually and tested the application after every merge.
+
+3. Real-Time Database Updates
+
+Challenge:
+Ensuring data saved through API requests appeared correctly in MongoDB Compass.
+
+Solution:
+Verified that the MongoDB connection string (MONGO_URI) and database name matched the schema used.
+Used Postman to send sample data to endpoints and checked MongoDB Compass for the updated collections.
+
+4. Structuring the Codebase
+
+Challenge:
+Organizing the backend code into manageable modules (routes, controllers, models).
+
+Solution:
+Used the MVC (Model-View-Controller) pattern:
+Models defined schemas and handled database interaction.
+Routes mapped endpoints to appropriate controller logic.
+Middleware was used for authentication and error handling.
